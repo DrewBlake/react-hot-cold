@@ -7,4 +7,8 @@ describe('<AuralStatus />', () => {
     it('Renders without crashing', () => {
         shallow(<AuralStatus />);
     });
+    it('Renders feedback', () => {
+        let wrapper = shallow(<AuralStatus auralStatus={'hello'} />);
+        expect(wrapper.contains('hello'));
+    });
 });

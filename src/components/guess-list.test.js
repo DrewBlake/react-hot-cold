@@ -7,4 +7,8 @@ describe('<GuessList />', () => {
     it('Renders without crashing', () => {
         shallow(<GuessList guesses={[]} />);
     });
+    it('Renders a list of guesses', () => {
+        let wrapper = shallow(<GuessList guesses={[4, 5]} />);
+        expect(wrapper.contains([]));
+    });
 });

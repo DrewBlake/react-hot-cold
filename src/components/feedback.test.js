@@ -7,4 +7,8 @@ describe('<Feedback />', () => {
     it('Renders without crashing', () => {
         shallow(<Feedback />);
     });
+    it('Renders feedback', () => {
+        let wrapper = shallow(<Feedback feedback={'hello'}/>);
+        expect(wrapper.contains('hello'));
+    });
 });
