@@ -8,7 +8,9 @@ describe('<GuessList />', () => {
         shallow(<GuessList guesses={[]} />);
     });
     it('Renders a list of guesses', () => {
-        let wrapper = shallow(<GuessList guesses={[4, 5]} />);
-        expect(wrapper.contains([]));
+        const values = [5, 4];
+        let wrapper = shallow(<GuessList guesses={values} />);
+        const items = wrapper.find('li');
+        expect(items.length).toEqual(values.length);
     });
 });
